@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nexusflow"
+version = "1.0.0"
+description = "Agentic AI Orchestration Platform — multi-agent task execution with DAG scheduling"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "NexusFlow Engineering" }]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nexusflow*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+select = ["E", "F", "I", "W", "B", "UP"]
+ignore = ["E501", "B008", "B904"]
+exclude = ["alembic/versions", ".venv", "__pycache__"]
+
+[tool.ruff.isort]
+known-first-party = ["nexusflow"]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
+exclude = ["alembic", "tests"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+addopts = "-v --cov=nexusflow --cov-report=term-missing --cov-fail-under=60"
+
+[tool.coverage.run]
+source = ["nexusflow"]
+omit = ["*/tests/*", "*/migrations/*", "alembic/*"]

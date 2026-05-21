@@ -1,0 +1,59 @@
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+nexusflow.egg-info/
+.venv/
+venv/
+env/
+
+# Coverage
+.coverage
+htmlcov/
+.pytest_cache/
+coverage.xml
+
+# Type checking
+.mypy_cache/
+.ruff_cache/
+
+# Database
+*.db
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Docker
+*.env.docker
+
+# Node
+node_modules/
+.next/
+.npm
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Alembic generated
+alembic/versions/*.py
+!alembic/versions/.gitkeep

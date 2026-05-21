@@ -1,0 +1,40 @@
+# NexusFlow Python Dependencies
+#
+# Version-pinned for reproducibility. Use pip-compile (pip-tools) to update.
+# Run: pip-compile requirements.in --output-file requirements.txt
+#
+# Production deps only. Dev deps are in requirements-dev.txt.
+
+# Core web framework
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+
+# Async Postgres driver + ORM
+sqlalchemy[asyncio]==2.0.36
+asyncpg==0.30.0
+alembic==1.14.0
+
+# Redis async client
+redis[hiredis]==5.2.1
+
+# Data validation + settings
+pydantic==2.10.3
+pydantic-settings==2.6.1
+
+# LLM provider
+openai==1.58.1
+
+# Auth
+PyJWT==2.10.1
+
+# Structured logging
+structlog==24.4.0
+
+# HTTP utilities (for health check scripts)
+httpx==0.28.1
+
+# Useful async utilities
+anyio==4.7.0
+
+# Type stubs — helps with mypy in CI
+types-redis==4.6.0.20241004
